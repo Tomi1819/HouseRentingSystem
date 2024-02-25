@@ -15,17 +15,17 @@
         [Required]
         [MaxLength(HouseTitleMaxLength)]
         [Comment("House title")]
-        public int Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         [Required]
         [MaxLength(HouseAddressMaxLength)]
         [Comment("House address")]
-        public int Address { get; set; }
+        public string Address { get; set; } = string.Empty;
 
         [Required]
         [MaxLength(HouseDescriptionMaxLength)]
         [Comment("House description")]
-        public int Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [Required]
         [Comment("House image url")]
