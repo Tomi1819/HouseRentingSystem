@@ -1,9 +1,10 @@
-﻿using HouseRentingSystem.Infrastructure.Data.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-
-namespace HouseRentingSystem.Infrastructure.Data
+﻿namespace HouseRentingSystem.Infrastructure.Data
 {
+    using HouseRentingSystem.Infrastructure.Data.DataSeed;
+    using HouseRentingSystem.Infrastructure.Data.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+
     public class HouseRentingDbContext : IdentityDbContext
     {
         public HouseRentingDbContext(DbContextOptions<HouseRentingDbContext> options)
@@ -13,19 +14,10 @@ namespace HouseRentingSystem.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder
-                .Entity<House>()
-                .HasOne(h => h.Agent)
-                .WithMany(h => h.Houses)
-                .HasForeignKey(h => h.AgentId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            builder
-                .Entity<House>()
-                .HasOne(h => h.Category)
-                .WithMany(h => h.Houses)
-                .HasForeignKey(h => h.CategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.ApplyConfiguration(new AgentConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new HouseConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
 
             base.OnModelCreating(builder);
         }
