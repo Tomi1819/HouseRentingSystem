@@ -1,9 +1,10 @@
-﻿using HouseRentingSystem.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-
-namespace HouseRentingSystem.Controllers
+﻿namespace HouseRentingSystem.Controllers
 {
+    using HouseRentingSystem.Models;
+    using HouseRentingSystem.Core.Models.Home;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -13,9 +14,9 @@ namespace HouseRentingSystem.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(new IndexViewModel());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
