@@ -1,8 +1,7 @@
-﻿using HouseRentingSystem.Infrastructure.Data.Models;
-using Microsoft.AspNetCore.Identity;
-
-namespace HouseRentingSystem.Infrastructure.Data.DataSeed
+﻿namespace HouseRentingSystem.Infrastructure.Data.DataSeed
 {
+    using HouseRentingSystem.Infrastructure.Data.Models;
+    using Microsoft.AspNetCore.Identity;
     internal class DataSeeder
     {
         public IdentityUser AgentUser { get; set; }
@@ -99,7 +98,7 @@ namespace HouseRentingSystem.Infrastructure.Data.DataSeed
                 Title = "Big House Marina",
                 Address = "North London, UK (near the border)",
                 Description = "A big house for your whole family. Don't miss to buy a house with three bedrooms.",
-                ImageUrl = "https://www.luxury-architecture.net/wp-content/uploads/2017/12/1513217889-7597-FAIRWAYS-010.jpg",
+                ImageUrl = "https://bgvoice.com/wp-content/uploads/2020/05/fachada-casa-esplugues_de_llobregat_1279-img3476652-26961759G.jpg",
                 PricePerMonth = 2100.00M,
                 CategoryId = DuplexCategory.Id,
                 AgentId = Agent.Id,
