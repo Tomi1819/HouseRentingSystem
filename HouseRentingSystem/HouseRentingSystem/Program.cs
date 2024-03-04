@@ -7,6 +7,7 @@ namespace HouseRentingSystem
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddApplicatinDbContext(builder.Configuration);
+
             builder.Services.AddApplicatinIdentity(builder.Configuration);
 
             builder.Services.AddControllersWithViews();

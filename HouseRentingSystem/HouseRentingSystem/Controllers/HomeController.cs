@@ -4,19 +4,26 @@
     using HouseRentingSystem.Core.Models.Home;
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
+    using HouseRentingSystem.Core.Contracts;
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly IHouseService houseService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(
+            ILogger<HomeController> logger,
+            IHouseService houseService)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.houseService = houseService;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(new IndexViewModel());
+            var model = await houseService.LastThreeHousesAsync();
+
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

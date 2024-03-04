@@ -1,13 +1,17 @@
 ﻿namespace Microsoft.Extensions.DependencyInjection
 {
+    using HouseRentingSystem.Core.Contracts;
+    using HouseRentingSystem.Core.Services;
     using HouseRentingSystem.Data;
     using HouseRentingSystem.Infrastructure.Data;
+    using HouseRentingSystem.Infrastructure.Data.Common;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     public static class ServiceCollectionExtension
     {
         public static IServiceCollection AddApplicatinServices(this IServiceCollection services)
         {
+            services.AddScoped<IHouseService, HouseService>();
             return services;
         }
 
@@ -18,6 +22,8 @@
                  options.UseSqlServer(connectionString));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddScoped<IRepository, Repository>();
 
             return services;
         }
