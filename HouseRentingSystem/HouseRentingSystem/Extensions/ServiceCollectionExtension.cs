@@ -12,6 +12,7 @@
         public static IServiceCollection AddApplicatinServices(this IServiceCollection services)
         {
             services.AddScoped<IHouseService, HouseService>();
+            services.AddScoped<IAgentService, AgentService>();
             return services;
         }
 

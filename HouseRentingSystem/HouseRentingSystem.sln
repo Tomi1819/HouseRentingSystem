@@ -5,9 +5,9 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem", "HouseRentingSystem\HouseRentingSystem.csproj", "{250F9BD7-72B7-4272-9809-648E8ED9CCAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Infrastructure", "HouseREntingSystem.Infrastructure\HouseRentingSystem.Infrastructure.csproj", "{63DA230E-D19E-4828-9379-69290EFB33BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem.Infrastructure", "HouseREntingSystem.Infrastructure\HouseRentingSystem.Infrastructure.csproj", "{63DA230E-D19E-4828-9379-69290EFB33BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Core", "HouseRentingSystem.Core\HouseRentingSystem.Core.csproj", "{A83FC7B1-829F-4DDE-912A-441ACE0E9965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem.Core", "HouseRentingSystem.Core\HouseRentingSystem.Core.csproj", "{A83FC7B1-829F-4DDE-912A-441ACE0E9965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

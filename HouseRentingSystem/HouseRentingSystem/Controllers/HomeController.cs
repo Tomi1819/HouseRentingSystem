@@ -1,12 +1,12 @@
 ﻿namespace HouseRentingSystem.Controllers
 {
+    using HouseRentingSystem.Core.Contracts;
     using HouseRentingSystem.Models;
-    using HouseRentingSystem.Core.Models.Home;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
-    using HouseRentingSystem.Core.Contracts;
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> logger;
         private readonly IHouseService houseService;
@@ -19,6 +19,7 @@
             this.houseService = houseService;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var model = await houseService.LastThreeHousesAsync();

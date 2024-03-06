@@ -4,8 +4,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-    [Authorize]
-    public class HouseController : Controller
+    public class HouseController : BaseController
     {
         [AllowAnonymous]
         [HttpGet]
