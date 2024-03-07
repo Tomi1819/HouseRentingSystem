@@ -7,6 +7,7 @@
     using static HouseRentingSystem.Infrastructure.DataConstants.ValidationConstants;
 
     [Comment("Agents table")]
+    [Index(nameof(PhoneNumber), IsUnique = true)]
     public class Agent
     {
         [Key]
