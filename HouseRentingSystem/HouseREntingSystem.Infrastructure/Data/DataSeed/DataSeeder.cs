@@ -4,23 +4,23 @@
     using Microsoft.AspNetCore.Identity;
     internal class DataSeeder
     {
-        public IdentityUser AgentUser { get; set; }
+        public IdentityUser AgentUser { get; set; } = null!;
 
-        public IdentityUser GuestUser { get; set; }
+        public IdentityUser GuestUser { get; set; } = null!;
 
-        public Agent Agent { get; set; }
+        public Agent Agent { get; set; } = null!;
 
-        public Category CottageCategory { get; set; }
+        public Category CottageCategory { get; set; } = null!;
 
-        public Category SingleCategory { get; set; }
+        public Category SingleCategory { get; set; } = null!;
 
-        public Category DuplexCategory { get; set; }
+        public Category DuplexCategory { get; set; } = null!;
 
-        public House FirstHouse { get; set; }
+        public House FirstHouse { get; set; } = null!;
 
-        public House SecondHouse { get; set; }
+        public House SecondHouse { get; set; } = null!;
 
-        public House ThirdHouse { get; set; }
+        public House ThirdHouse { get; set; } = null!;
 
         public DataSeeder()
         {
