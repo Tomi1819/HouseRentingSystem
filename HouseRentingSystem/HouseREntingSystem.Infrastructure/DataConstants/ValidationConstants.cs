@@ -1,6 +1,6 @@
 ﻿namespace HouseRentingSystem.Infrastructure.DataConstants
 {
-    internal class ValidationConstants
+    public class ValidationConstants
     {
         public const int CategoryNameMaxLength = 50;
 
