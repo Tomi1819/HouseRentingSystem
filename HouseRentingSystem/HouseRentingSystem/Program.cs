@@ -1,3 +1,5 @@
+using HouseRentingSystem.ModelBinders;
+
 namespace HouseRentingSystem
 {
     public class Program
@@ -10,9 +12,12 @@ namespace HouseRentingSystem
 
             builder.Services.AddApplicatinIdentity(builder.Configuration);
 
-            builder.Services.AddControllersWithViews();
-
             builder.Services.AddApplicatinServices();
+
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.ModelBinderProviders.Insert(0, new DecimalModelBinderPrivider());
+            });
 
             var app = builder.Build();
 
