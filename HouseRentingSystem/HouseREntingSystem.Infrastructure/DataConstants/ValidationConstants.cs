@@ -17,7 +17,7 @@
         public const int AgentPhoneNumberMaxLength = 15;
 
         public const string MinPricePerMonth = "0";
-        public const string MaxPricePerMonth = "0";
+        public const string MaxPricePerMonth = "2000";
         public const string PriceErrorMessage = "Price per month must be a positive number and less than {2} leva";
     }
 }
